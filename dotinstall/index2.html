@@ -19,8 +19,9 @@
     <p>{{"AVV"|lowercase}}</p>
     <p><input type="text" ng-model="query.name"></p>
     <ul>
-      <li ng-repeat="user in users|filter:query" ng-class-even="'even'" ng-class-odd="'odd'">
+      <li ng-repeat="user in users|filter:query" ng-class-even="'even'" ng-class-odd="'odd'" ng-controller="userItemCtrl">
       {{$index}} {{user.name|uppercase}} {{user.score|number:4}}
+      <button ng-click="increment()">+1</button>
       </li>
     </ul>
   </div>
